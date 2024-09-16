@@ -16,12 +16,14 @@ import { Textarea } from "@/shadcn/ui/textarea";
 import { Button } from "@/shadcn/ui/button";
 
 export default function ContactForm() {
-    // Initialize the form
+    // Initialize the form with subject and message in defaultValues
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
             first_name: "",
             email: "",
+            subject: "", // Add subject here
+            message: "", // Add message here
         },
     });
 
@@ -37,6 +39,7 @@ export default function ContactForm() {
                 onSubmit={form.handleSubmit(onSubmit)}
                 className="space-y-6 mb-10 max-w-6xl w-full mx-auto"
             >
+                {/* Grid for name and email */}
                 <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-6 w-full">
                     {/* First Name Field */}
                     <FormField
@@ -76,7 +79,7 @@ export default function ContactForm() {
                 {/* Subject Field */}
                 <FormField
                     control={form.control}
-                    name="subject" // Correcting to "subject"
+                    name="subject" // Now this is valid
                     render={({ field }) => (
                         <FormItem>
                             <FormLabel>Onderwerp</FormLabel>
@@ -91,7 +94,7 @@ export default function ContactForm() {
                 {/* Message Field */}
                 <FormField
                     control={form.control}
-                    name="message" // Correcting to "message"
+                    name="message" // Now this is valid
                     render={({ field }) => (
                         <FormItem>
                             <FormLabel>Bericht</FormLabel>
