@@ -1,118 +1,42 @@
-import React from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { formSchema } from "@/schemas/formSchema";
-import {
-    Form,
-    FormControl,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-} from "@/shadcn/ui/form";
-import { Input } from "@/shadcn/ui/input";
-import { Textarea } from "@/shadcn/ui/textarea";
-import { Button } from "@/shadcn/ui/button";
+import Heading from "@/Components/heading/Heading";
+import childletter from "../../../../assets/child-letter.png";
+import KeyFeatures from "@/Components/cards/KeyFeatures";
 
-export default function ContactForm() {
-    // Initialize the form with subject and message in defaultValues
-    const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
-        defaultValues: {
-            first_name: "",
-            email: "",
-            subject: "", // Add subject here
-            message: "", // Add message here
-        },
-    });
-
-    // Handle form submission
-    function onSubmit(values: z.infer<typeof formSchema>) {
-        console.log(values);
-        // Handle form submission logic here
-    }
-
+export default function WhyChoose() {
     return (
-        <Form {...form}>
-            <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-6 mb-10 max-w-6xl w-full mx-auto"
-            >
-                {/* Grid for name and email */}
-                <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-6 w-full">
-                    {/* First Name Field */}
-                    <FormField
-                        control={form.control}
-                        name="first_name"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormLabel>Naam</FormLabel>
-                                <FormControl>
-                                    <Input placeholder="Je naam" {...field} />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-
-                    {/* Email Field */}
-                    <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormLabel>Email</FormLabel>
-                                <FormControl>
-                                    <Input
-                                        type="email"
-                                        placeholder="Je e-mailadres"
-                                        {...field}
-                                    />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
+        <div className="py-10 bg-gray-50 ">
+            {" "}
+            {/* Adjust background if necessary */}
+            <div className="container mx-auto px-4 max-w-6xl w-full">
+                {/* Custom heading styling */}
+                <div className="text-center max-w-3xl mx-auto mb-10">
+                    <h1 className="text-3xl font-bold mb-4">
+                        Waarom kiezen voor SwiftLetters
+                    </h1>
+                    <p className="text-lg text-gray-700">
+                        Bij Swift Letters.nl streven we ernaar om de beste
+                        service te bieden voor het versturen van jouw brieven en
+                        documenten. Hier zijn drie redenen waarom je voor ons
+                        zou moeten kiezen:
+                    </p>
                 </div>
 
-                {/* Subject Field */}
-                <FormField
-                    control={form.control}
-                    name="subject" // Now this is valid
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Onderwerp</FormLabel>
-                            <FormControl>
-                                <Input placeholder="Onderwerp" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
+                <div className="flex flex-col lg:flex-row-reverse items-center lg:space-x-12">
+                    {/* Left image section */}
+                    <div className="lg:w-1/2 flex justify-center lg:justify-start mb-8 lg:mb-0">
+                        <img
+                            src={childletter}
+                            alt="child-letter"
+                            className="mx-auto w-[250px] h-[350px] lg:w-[300px] lg:h-[400px]" // Adjust size as per need
+                        />
+                    </div>
 
-                {/* Message Field */}
-                <FormField
-                    control={form.control}
-                    name="message" // Now this is valid
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Bericht</FormLabel>
-                            <FormControl>
-                                <Textarea placeholder="Je bericht" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-
-                {/* Submit Button */}
-                <div className="flex justify-end">
-                    <Button variant="main" type="submit" className="px-6 py-3">
-                        Verzenden
-                    </Button>
+                    {/* Right KeyFeatures section */}
+                    <div className="lg:w-1/2">
+                        <KeyFeatures />
+                    </div>
                 </div>
-            </form>
-        </Form>
+            </div>
+        </div>
     );
 }

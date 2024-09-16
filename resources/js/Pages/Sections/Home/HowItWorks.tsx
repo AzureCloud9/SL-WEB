@@ -10,12 +10,11 @@ export default function HowItWorks() {
                 <div className="container mx-auto px-4 lg:w-[1150px]">
                     {/* Section Title */}
                     <h2 className="text-3xl lg:text-4xl font-bold text-center mb-8 lg:mb-16">
-                        Stap-voor-Stap Uitleg
+                        Stap-voor-Stapawdawd Uitleg
                     </h2>
-                    
+
                     {/* Main Content */}
                     <div className="lg:flex lg:justify-between lg:items-center lg:gap-10">
-                        
                         {/* Image for larger screens */}
                         <div className="hidden lg:flex lg:w-1/2 lg:justify-center">
                             <img

@@ -20,7 +20,7 @@ export default function ContactForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      first_name: "", // Change "name" to "first_name"
+      first_name: "",
       email: "",
     },
   });
@@ -33,8 +33,13 @@ export default function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 mb-10">
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-6 mb-10 max-w-6xl w-full mx-auto"
+      >
+        {/* Grid for name and email */}
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8 w-full">
+          {/* First Name Field */}
           <FormField
             control={form.control}
             name="first_name"
@@ -48,6 +53,8 @@ export default function ContactForm() {
               </FormItem>
             )}
           />
+
+          {/* Email Field */}
           <FormField
             control={form.control}
             name="email"
@@ -55,16 +62,22 @@ export default function ContactForm() {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input type="email" placeholder="Je e-mailadres" {...field} />
+                  <Input
+                    type="email"
+                    placeholder="Je e-mailadres"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
         </div>
+
+        {/* Subject Field */}
         <FormField
           control={form.control}
-          name="email"
+          name="subject"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Onderwerp</FormLabel>
@@ -75,9 +88,11 @@ export default function ContactForm() {
             </FormItem>
           )}
         />
+
+        {/* Message Field */}
         <FormField
           control={form.control}
-          name="email"
+          name="message"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Bericht</FormLabel>
@@ -88,8 +103,10 @@ export default function ContactForm() {
             </FormItem>
           )}
         />
+
+        {/* Submit Button */}
         <div className="flex justify-end">
-          <Button variant="main" type="submit">
+          <Button variant="main" type="submit" className="px-8 py-3">
             Verzenden
           </Button>
         </div>
