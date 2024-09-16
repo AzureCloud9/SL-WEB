@@ -11,7 +11,6 @@ export default function AboutUs() {
            <Overons />
            <HowItWorks />
            <WhyChoose />
-           <KeyFeatures />
     </DefaultLayout>
     )
 }
