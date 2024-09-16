@@ -10,7 +10,7 @@ export default function HowItWorks() {
                 <div className="container mx-auto px-4 lg:w-[1150px]">
                     {/* Section Title */}
                     <h2 className="text-3xl lg:text-4xl font-bold text-center mb-8 lg:mb-16">
-                        Stap-voor-Stapawdawd Uitleg
+                        Stap-voor-Stap Uitleg
                     </h2>
 
                     {/* Main Content */}
