@@ -13,8 +13,10 @@ export default function Hero() {
 
     return (
         <div className="mb-10 mt-5 lg:mt-10 flex flex-col items-center px-4">
-            <div className="flex flex-col lg:flex-row lg:justify-center lg:w-[1150px] lg:items-center w-full">
-                <div className="flex flex-col justify-center  lg:flex-row lg:justify-center lg:items-center w-full">
+            {/* Main Content Wrapper */}
+            <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center lg:w-[1150px] w-full">
+                {/* Text Section */}
+                <div className="flex flex-col justify-center lg:justify-start w-full lg:w-1/2">
                     <Heading
                         title="Stuur Brieven Snel en Gemakkelijk Online"
                         text1="Bij SwiftLetters bieden we een moderne oplossing voor het verzenden van brieven."
@@ -23,17 +25,23 @@ export default function Hero() {
                         buttonText="Verstuur Nu"
                         secondaryButtonText="Meer Informatie"
                     />
-                   <div className="justify-center flex items-center">
+                </div>
+
+                {/* Image Section */}
+                <div className="flex justify-center lg:w-1/2 lg:justify-end mt-6 lg:mt-0">
                     <img
                         src={girl}
                         alt="girlhero"
-                        className="mt-6 w-full max-w-xs lg:mt-0 lg:w-[600px] lg:h-[400px] lg:ml-8"
+                        className="w-full max-w-xs lg:max-w-none lg:w-[500px] lg:h-auto"
                     />
-                    </div>
                 </div>
             </div>
-            <div className="flex flex-col mt-11 items-center lg:mt-20 lg:mb-5 w-full">
-                <p className="text-lg lg:text-xl text-center">Hoe het werkt?</p>
+
+            {/* Scroll Down Section */}
+            <div className="flex flex-col mt-10 lg:mt-20 items-center w-full">
+                <p className="text-lg lg:text-xl text-center text-gray-700">
+                    Hoe het werkt?
+                </p>
                 <div
                     className="animate-bounce mt-6 rounded-full border-2 border-gray-300 bg-swift_black w-12 h-12 lg:h-14 lg:w-14 flex justify-center items-center cursor-pointer"
                     onClick={scrollToHowItWorks}

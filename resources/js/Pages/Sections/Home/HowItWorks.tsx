@@ -6,20 +6,27 @@ import phone from "../../../../assets/howitworksphone.svg";
 export default function HowItWorks() {
     return (
         <SectionLayout backgroundColor="bg-swift_black" fullWidth>
-            <div id="howitworks" className="text-white py-10 -mt-8">
+            <div id="howitworks" className="text-white py-10 lg:py-16">
                 <div className="container mx-auto px-4 lg:w-[1150px]">
-                    <h2 className="text-3xl mb-8 font-roboto font-bold lg:text-center lg:mb-24">
+                    {/* Section Title */}
+                    <h2 className="text-3xl lg:text-4xl font-bold text-center mb-8 lg:mb-16">
                         Stap-voor-Stap Uitleg
                     </h2>
-                    <div className="lg:flex lg:justify-between lg:gap-2 lg:items-center  lg:w-[1150px]">
+                    
+                    {/* Main Content */}
+                    <div className="lg:flex lg:justify-between lg:items-center lg:gap-10">
+                        
+                        {/* Image for larger screens */}
                         <div className="hidden lg:flex lg:w-1/2 lg:justify-center">
                             <img
                                 src={phone}
-                                alt="phone"
-                                className="lg:w-full"
+                                alt="phone illustration"
+                                className="lg:max-w-sm xl:max-w-md"
                             />
                         </div>
-                        <div className="space-y-8 lg:h-[480px] lg:flex lg:flex-col lg:justify-between lg:w-1/2">
+
+                        {/* Steps Content */}
+                        <div className="space-y-8 lg:w-1/2 lg:space-y-10">
                             <StepCard
                                 stepNumber={1}
                                 title="Upload Uw Documenten"
