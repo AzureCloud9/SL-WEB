@@ -6,6 +6,8 @@ import ProgressSteps from "@/Components/steps/ProgressSteps";
 import RecipientInfo from "@/Pages/Sections/BriefSturen/RecipientInfo";
 import OrderSummary from "@/Pages/Sections/BriefSturen/OrderSummary";
 import axios from "axios";
+import { Head } from "@inertiajs/react";
+
 
 export default function Shipping() {
     const [currentStep, setCurrentStep] = useState<number>(1);
@@ -46,6 +48,7 @@ export default function Shipping() {
 
     return (
         <DefaultLayout>
+            <Head title="Brief Sturen" />
             <SectionLayout backgroundColor="bg-swift_black" fullWidth>
                 <ProgressSteps currentStep={currentStep} />
             </SectionLayout>
