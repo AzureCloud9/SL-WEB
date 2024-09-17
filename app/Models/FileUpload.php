@@ -11,8 +11,9 @@ class FileUpload extends Model
 
     protected $fillable = [
         'user_id',
-        'bestelnummer', // Add this line
+        'bestelnummer', 
         'file_name',
         'file_path',
+        'mollie_payment_id',  // Add the Mollie payment ID to the fillable properties
     ];
 }

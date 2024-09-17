@@ -18,8 +18,8 @@ const buttonVariants = cva(
                 link: "text-primary underline-offset-4 hover:underline",
                 shippingBack:
                     "bg-gray-500 text-white hover:bg-gray-600 font-sen font-bold",
-                next: "bg-swift_black text-white hover:bg-swift_black_hover w-[100%] rounded-3xl ml-4 font-sen font-bold mb-12",
-                back: "border-swift_black border-2 text-swift_secondary hover:bg-swift_secondary_hover w-[100%] rounded-3xl mr-4 hover:text-white font-sen font-bold",
+                next: "bg-swift_black text-white hover:bg-swift_black_hover w-[100%] rounded-3xl ml-4 font-sen font-bold mb-12 ",
+                back: "border-swift_black border-2 text-swift_secondary hover:bg-swift_secondary_hover  w-[100%] rounded-3xl ml-4 font-sen font-bold mb-12 hover:text-white",
             },
             size: {
                 default:

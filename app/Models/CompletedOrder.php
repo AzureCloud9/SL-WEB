@@ -12,6 +12,7 @@ class CompletedOrder extends Model
     protected $fillable = [
         'user_id',
         'bestelnummer',
+        'mollie_payment_id',  // Add this line
         'recipient_name',
         'recipient_address',
         'recipient_postcode',

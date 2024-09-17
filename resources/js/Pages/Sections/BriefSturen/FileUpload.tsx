@@ -113,7 +113,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onNext }) => {
     }, [file, pageCount, onNext]);
 
     return (
-        <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
+        <div className="flex flex-col items-center justify-center w-full pl-6 pr-6 mx-auto">
             <Heading
                 title="PDF uploaden"
                 text1="Upload hier uw PDF of Word-document dat u wilt versturen. Ons systeem accepteert beide formaten en zorgt ervoor dat uw documenten correct worden verwerkt. Houd er rekening mee dat uw PDF maximaal 12 pagina's mag bevatten."
