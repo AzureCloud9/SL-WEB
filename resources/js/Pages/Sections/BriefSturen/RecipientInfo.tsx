@@ -168,8 +168,8 @@ const RecipientInfo: React.FC<RecipientInfoProps> = ({
     };
 
     return (
-        <div className="flex justify-center items-center min-h-screen">
-            <div className="w-full max-w-2xl bg-white shadow-lg rounded-lg p-8 lg:p-12">
+        <div className="flex justify-center items-center min-h-screen ">
+            <div className="w-full max-w-2xl bg-white shadow-lg rounded-lg p-6">
                 <Heading
                     title="Voer Ontvanger In"
                     text1="Vul de onderstaande gegevens in om ervoor te zorgen dat uw brief correct wordt bezorgd. Zorg ervoor dat alle informatie nauwkeurig en volledig is."
@@ -182,7 +182,7 @@ const RecipientInfo: React.FC<RecipientInfoProps> = ({
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
                         <div>
-                            <label className="block text-lg font-medium text-gray-700">
+                            <label className="block text-sm font-medium text-gray-700">
                                 Voornaam Ontvanger
                             </label>
                             <Input
@@ -191,7 +191,6 @@ const RecipientInfo: React.FC<RecipientInfoProps> = ({
                                 value={formValues.first_name}
                                 onChange={handleChange}
                                 onKeyPress={handleKeyPress}
-                                className="text-lg"
                             />
                             {errors.first_name && (
                                 <p className="text-red-500">
@@ -200,7 +199,7 @@ const RecipientInfo: React.FC<RecipientInfoProps> = ({
                             )}
                         </div>
                         <div>
-                            <label className="block text-lg font-medium text-gray-700">
+                            <label className="block text-sm font-medium text-gray-700">
                                 Achternaam Ontvanger
                             </label>
                             <Input
@@ -209,7 +208,6 @@ const RecipientInfo: React.FC<RecipientInfoProps> = ({
                                 value={formValues.last_name}
                                 onChange={handleChange}
                                 onKeyPress={handleKeyPress}
-                                className="text-lg"
                             />
                             {errors.last_name && (
                                 <p className="text-red-500">
@@ -219,7 +217,7 @@ const RecipientInfo: React.FC<RecipientInfoProps> = ({
                         </div>
                     </div>
                     <div>
-                        <label className="block text-lg font-medium text-gray-700">
+                        <label className="block text-sm font-medium text-gray-700">
                             Adres Ontvanger
                         </label>
                         <Input
@@ -228,7 +226,6 @@ const RecipientInfo: React.FC<RecipientInfoProps> = ({
                             value={formValues.street_address}
                             onChange={handleChange}
                             onKeyPress={handleKeyPress}
-                            className="text-lg"
                         />
                         {errors.street_address && (
                             <p className="text-red-500">
@@ -237,7 +234,7 @@ const RecipientInfo: React.FC<RecipientInfoProps> = ({
                         )}
                     </div>
                     <div>
-                        <label className="block text-lg font-medium text-gray-700">
+                        <label className="block text-sm font-medium text-gray-700">
                             Postcode Ontvanger
                         </label>
                         <Input
@@ -246,14 +243,13 @@ const RecipientInfo: React.FC<RecipientInfoProps> = ({
                             value={formValues.postal_code}
                             onChange={handleChange}
                             onKeyPress={handleKeyPress}
-                            className="text-lg"
                         />
                         {errors.postal_code && (
                             <p className="text-red-500">{errors.postal_code}</p>
                         )}
                     </div>
                     <div>
-                        <label className="block text-lg font-medium text-gray-700">
+                        <label className="block text-sm font-medium text-gray-700">
                             Stad Ontvanger
                         </label>
                         <Input
@@ -262,14 +258,13 @@ const RecipientInfo: React.FC<RecipientInfoProps> = ({
                             value={formValues.city}
                             onChange={handleChange}
                             onKeyPress={handleKeyPress}
-                            className="text-lg"
                         />
                         {errors.city && (
                             <p className="text-red-500">{errors.city}</p>
                         )}
                     </div>
                     <div>
-                        <label className="block text-lg font-medium text-gray-700">
+                        <label className="block text-sm font-medium text-gray-700">
                             Land Ontvanger
                         </label>
                         <SelectBTN
@@ -288,7 +283,7 @@ const RecipientInfo: React.FC<RecipientInfoProps> = ({
                         pageCount={sessionDetails.pageCount}
                     />
 
-                    <h3 className="text-xl font-bold mb-4">
+                    <h3 className="text-lg font-bold mb-2">
                         Afzender toevoegen (optioneel)
                     </h3>
                     <div>
@@ -302,7 +297,7 @@ const RecipientInfo: React.FC<RecipientInfoProps> = ({
                         <>
                             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
                                 <div>
-                                    <label className="block text-lg font-medium text-gray-700">
+                                    <label className="block text-sm font-medium text-gray-700">
                                         Voornaam Afzender
                                     </label>
                                     <Input
@@ -311,7 +306,6 @@ const RecipientInfo: React.FC<RecipientInfoProps> = ({
                                         value={formValues.sender_first_name}
                                         onChange={handleChange}
                                         onKeyPress={handleKeyPress}
-                                        className="text-lg"
                                     />
                                     {errors.sender_first_name && (
                                         <p className="text-red-500">
@@ -320,7 +314,7 @@ const RecipientInfo: React.FC<RecipientInfoProps> = ({
                                     )}
                                 </div>
                                 <div>
-                                    <label className="block text-lg font-medium text-gray-700">
+                                    <label className="block text-sm font-medium text-gray-700">
                                         Achternaam Afzender
                                     </label>
                                     <Input
@@ -329,7 +323,6 @@ const RecipientInfo: React.FC<RecipientInfoProps> = ({
                                         value={formValues.sender_last_name}
                                         onChange={handleChange}
                                         onKeyPress={handleKeyPress}
-                                        className="text-lg"
                                     />
                                     {errors.sender_last_name && (
                                         <p className="text-red-500">
@@ -339,7 +332,7 @@ const RecipientInfo: React.FC<RecipientInfoProps> = ({
                                 </div>
                             </div>
                             <div>
-                                <label className="block text-lg font-medium text-gray-700">
+                                <label className="block text-sm font-medium text-gray-700">
                                     Email Afzender
                                 </label>
                                 <Input
@@ -348,7 +341,6 @@ const RecipientInfo: React.FC<RecipientInfoProps> = ({
                                     value={formValues.email}
                                     onChange={handleChange}
                                     onKeyPress={handleKeyPress}
-                                    className="text-lg"
                                 />
                                 {errors.email && (
                                     <p className="text-red-500">
