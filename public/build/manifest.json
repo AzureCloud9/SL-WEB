@@ -247,7 +247,7 @@
     "src": "resources/assets/womenphone.svg"
   },
   "resources/css/app.css": {
-    "file": "assets/app-MUV0ETVa.css",
+    "file": "assets/app-P9XMr412.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -526,7 +526,7 @@
     ]
   },
   "resources/js/Pages/Sections/BriefSturen/FileUpload.tsx": {
-    "file": "assets/FileUpload-DfirKEvD.js",
+    "file": "assets/FileUpload-DBYHzsl2.js",
     "name": "FileUpload",
     "src": "resources/js/Pages/Sections/BriefSturen/FileUpload.tsx",
     "isDynamicEntry": true,
@@ -541,7 +541,7 @@
     ]
   },
   "resources/js/Pages/Sections/BriefSturen/OrderSummary.tsx": {
-    "file": "assets/OrderSummary-BEuew4w4.js",
+    "file": "assets/OrderSummary-HnHoKyM9.js",
     "name": "OrderSummary",
     "src": "resources/js/Pages/Sections/BriefSturen/OrderSummary.tsx",
     "isDynamicEntry": true,
@@ -555,7 +555,7 @@
     ]
   },
   "resources/js/Pages/Sections/BriefSturen/RecipientInfo.tsx": {
-    "file": "assets/RecipientInfo-BBHNrRuD.js",
+    "file": "assets/RecipientInfo-D-Zjh654.js",
     "name": "RecipientInfo",
     "src": "resources/js/Pages/Sections/BriefSturen/RecipientInfo.tsx",
     "isDynamicEntry": true,
@@ -616,7 +616,7 @@
     ]
   },
   "resources/js/Pages/Shipping.tsx": {
-    "file": "assets/Shipping-BX2AISWu.js",
+    "file": "assets/Shipping-Cd3hPcoK.js",
     "name": "Shipping",
     "src": "resources/js/Pages/Shipping.tsx",
     "isDynamicEntry": true,
@@ -649,7 +649,7 @@
     ]
   },
   "resources/js/app.tsx": {
-    "file": "assets/app-DeHcaNtu.js",
+    "file": "assets/app-nt8mwjGL.js",
     "name": "app",
     "src": "resources/js/app.tsx",
     "isEntry": true,
@@ -685,7 +685,7 @@
       "resources/js/Pages/Welcome.tsx"
     ],
     "css": [
-      "assets/app-MUV0ETVa.css"
+      "assets/app-P9XMr412.css"
     ]
   }
 }

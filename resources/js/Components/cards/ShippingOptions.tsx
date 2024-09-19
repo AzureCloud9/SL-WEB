@@ -100,7 +100,7 @@ export default function ShippingOptions({
                         key={option.name}
                         className={`px-4 py-2 cursor-pointer rounded-md transition-all duration-300 ${
                             selectedOption.name === option.name
-                                ? "bg-white text-black font-bold shadow-md transform scale-105"
+                                ? "bg-white text-black font-bold font-roboto shadow-md transform scale-105"
                                 : "bg-primary-light text-white hover:bg-primary-dark hover:text-white"
                         }`}
                         onClick={() => handleOptionClick(option.name)}
@@ -110,11 +110,11 @@ export default function ShippingOptions({
                 ))}
             </div>
             <div className="bg-primary-dark text-white p-6 rounded-lg">
-                <h3 className="text-lg font-semibold">
+                <h3 className="text-lg font-semibold font-roboto">
                     {selectedOption.name} brief
                 </h3>
-                <p className="mt-2">{selectedOption.description}</p>
-                <p className="mt-4 font-bold">
+                <p className="mt-2 font-sen">{selectedOption.description}</p>
+                <p className="mt-4 font-bold font-sen">
                     Prijs: €{selectedOption.price.toFixed(2)}
                 </p>
             </div>

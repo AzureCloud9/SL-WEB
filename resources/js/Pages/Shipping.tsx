@@ -48,17 +48,22 @@ export default function Shipping() {
     return (
         <DefaultLayout>
             <Head title="Brief Sturen" />
+            
+            {/* Mobile View */}
             <div className="lg:hidden">
                 <SectionLayout backgroundColor="bg-swift_black" fullWidth>
                     <ProgressSteps currentStep={currentStep} />
                 </SectionLayout>
             </div>
+
+            {/* Desktop View */}
             <div className="lg:flex justify-center lg:my-16 ">
-                <div className=" bg-swift_black w-[300px] lg:flex  justify-center hidden ">
+                <div className="bg-swift_black w-[300px] lg:flex justify-center hidden sticky top-16">
                     <ProgressSteps currentStep={currentStep} />
                 </div>
-                <div className="lg:bg-white lg:w-[850px] ">
-                    <div className="mt-10 ">
+                
+                <div className="lg:bg-white lg:w-[850px] p-8 lg:rounded-lg lg:shadow-lg">
+                    <div className="mt-10 lg:mt-0">
                         {currentStep === 1 && (
                             <FileUpload
                                 key={componentKey}

@@ -123,7 +123,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onNext }) => {
             />{" "}
             <label
                 htmlFor="file-upload"
-                className="block text-sm font-medium text-gray-700 sr-only"
+                className="block text-sm font-medium font-sen text-gray-700 sr-only"
             >
                 File Upload
             </label>

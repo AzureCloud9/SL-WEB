@@ -100,15 +100,13 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
     return (
         <div className="mx-6">
             <div className="max-w-4xl mx-auto bg-white border-gray-200 border rounded-lg p-8 shadow-lg h-full min-h-[200px]">
-                <h2 className="text-4xl font-bold text-gray-800 mb-6">
-                    Bestellingsoverzicht{" "}
+                <h2 className="text-4xl font-roboto font-bold text-gray-800 mb-6">
+                    Bestellingsoverzicht
                 </h2>
-                <div className="space-y-6 text-lg">
+                <div className="space-y-6 text-lg font-sen">
                     {overviewData.fileUploads.length > 0 && (
                         <div className="flex flex-col border-b border-gray-200 pb-4">
-                            <span className="text-black font-bold">
-                                Bestelnummer:
-                            </span>
+                            <span className="text-black font-roboto font-bold">Bestelnummer:</span>
                             <span className="text-gray-700">
                                 {overviewData.fileUploads[0].user_id}
                             </span>
@@ -117,44 +115,31 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
                     {latestRecipient && (
                         <>
                             <div className="flex flex-col border-b border-gray-200 pb-4">
-                                <span className="text-black font-bold">
-                                    Ontvanger Naam:
-                                </span>
+                                <span className="text-black font-roboto font-bold">Ontvanger Naam:</span>
                                 <span className="text-gray-700">
                                     {latestRecipient.recipient_name}
                                 </span>
                             </div>
                             <div className="flex flex-col border-b border-gray-200 pb-4">
-                                <span className="text-black font-bold">
-                                    Leveringsadres:
-                                </span>
+                                <span className="text-black font-roboto font-bold">Leveringsadres:</span>
                                 <span className="text-gray-700">
                                     {latestRecipient.recipient_address}
                                 </span>
                             </div>
                             <div className="flex flex-col border-b border-gray-200 pb-4">
-                                <span className="text-black font-bold">
-                                    Levertijd:
-                                </span>
+                                <span className="text-black font-roboto font-bold">Levertijd:</span>
                                 <span className="text-gray-700">
-                                    {latestRecipient.delivery_option ===
-                                    "Regulier"
+                                    {latestRecipient.delivery_option === "Regulier"
                                         ? "3-5 werkdagen"
-                                        : latestRecipient.delivery_option ===
-                                          "Spoed"
+                                        : latestRecipient.delivery_option === "Spoed"
                                         ? "1-2 werkdagen"
                                         : "2-3 werkdagen"}
                                 </span>
                             </div>
                             <div className="flex flex-col">
-                                <span className="text-black font-bold">
-                                    Totale Kosten:
-                                </span>
-                                <span className="text-gray-900 font-semibold text-xl">
-                                    €
-                                    {parseFloat(
-                                        latestRecipient.user_price
-                                    ).toFixed(2)}
+                                <span className="text-black font-roboto font-bold">Totale Kosten:</span>
+                                <span className="text-gray-900 font-sen font-semibold text-xl">
+                                    €{parseFloat(latestRecipient.user_price).toFixed(2)}
                                 </span>
                             </div>
                         </>
@@ -164,7 +149,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
 
             {/* Terms & Conditions */}
             <div className="mt-10">
-                <p className="mb-5 text-2xl font-semibold">
+                <p className="mb-5 text-2xl font-roboto font-semibold">
                     Wettelijke bepalingen en voorwaarden
                 </p>
                 <div className="flex items-center mb-4">
@@ -172,7 +157,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
                         checked={switch1Checked}
                         onCheckedChange={setSwitch1Checked}
                     />
-                    <p className="ml-4 text-lg">
+                    <p className="ml-4 text-lg font-sen">
                         Ja, ik aanvaard de Algemene Voorwaarden en Privacybeleid
                     </p>
                 </div>
@@ -181,7 +166,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
                         checked={switch2Checked}
                         onCheckedChange={setSwitch2Checked}
                     />
-                    <p className="ml-4 text-lg">
+                    <p className="ml-4 text-lg font-sen">
                         Ja, ik ben me ervan bewust dat ik er verantwoordelijk
                         voor ben dat de brief voldoet aan alle wettelijke eisen
                         voor het beoogde gebruik.
@@ -198,7 +183,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
                     variant="next"
                     type="submit"
                     onClick={handlePay}
-                    disabled={!switch1Checked || !switch2Checked || isPaying} // Disable unless both switches are checked
+                    disabled={!switch1Checked || !switch2Checked || isPaying}
                 >
                     Betaal
                 </Button>
