@@ -169,7 +169,7 @@ const RecipientInfo: React.FC<RecipientInfoProps> = ({
 
     return (
         <div className="flex justify-center items-center min-h-screen ">
-            <div className="w-full max-w-2xl bg-white shadow-lg rounded-lg p-6">
+            <div className="w-full max-w-2xl bg-white shadow-lg lg:shadow-none rounded-lg p-6">
                 <Heading
                     title="Voer Ontvanger In"
                     text1="Vul de onderstaande gegevens in om ervoor te zorgen dat uw brief correct wordt bezorgd. Zorg ervoor dat alle informatie nauwkeurig en volledig is."
