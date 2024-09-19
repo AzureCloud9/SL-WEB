@@ -13,11 +13,14 @@ export default function ProgressSteps({ currentStep }: ProgressStepsProps) {
     ];
 
     return (
-        <div className="flex justify-center items-center space-x-4 md:space-x-8">
+        <div className="flex lg:flex-col justify-center items-center space-x-4 lg:space-x-0 lg:space-y-8 md:space-x-8">
             {steps.map((step) => (
-                <div key={step.number} className="flex flex-col items-center h-20 justify-start">
+                <div
+                    key={step.number}
+                    className="flex flex-col items-center justify-start"
+                >
                     <div
-                        className={`w-8 h-8 md:w-12 md:h-12 flex justify-center items-center rounded-full ${
+                        className={`w-12 h-12 md:w-14 md:h-14 flex justify-center items-center rounded-full ${
                             currentStep === step.number
                                 ? "bg-swift_blue"
                                 : "border-2 md:border-4 border-white"
@@ -25,7 +28,9 @@ export default function ProgressSteps({ currentStep }: ProgressStepsProps) {
                     >
                         <span
                             className={`font-bold text-sm md:text-base ${
-                                currentStep === step.number ? "text-white" : "text-white"
+                                currentStep === step.number
+                                    ? "text-white"
+                                    : "text-white"
                             }`}
                         >
                             {step.number}

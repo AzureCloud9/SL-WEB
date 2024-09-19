@@ -15,7 +15,7 @@ export default function Language() {
 
     return (
         <Select value={selectedLanguage} onValueChange={setSelectedLanguage}>
-            <SelectTrigger className="w-[130px]">
+            <SelectTrigger className="w-[130px] bg-swift_bg ">
                 <SelectValue>
                     {selectedLanguage === "dutch" ? "🇳🇱 Dutch" : "🇬🇧 English"}
                 </SelectValue>

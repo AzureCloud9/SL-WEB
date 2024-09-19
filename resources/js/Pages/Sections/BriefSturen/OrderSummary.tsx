@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Button } from "@/shadcn/ui/button";
 import spinner from "../../../../assets/spinner.svg";
+import { Switch } from "@/shadcn/ui/switch";
 
 interface OverviewData {
     fileUploads: { user_id: string }[];
@@ -33,6 +34,8 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [isPaying, setIsPaying] = useState(false); // New state to manage payment loading
+    const [switch1Checked, setSwitch1Checked] = useState(false); // State for the first switch
+    const [switch2Checked, setSwitch2Checked] = useState(false); // State for the second switch
 
     const fetchData = () => {
         setLoading(true);
@@ -95,38 +98,45 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
             : null;
 
     return (
-        <div>
-            <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-8 h-full min-h-[200px]">
-                <h2 className="text-3xl font-bold text-gray-800 mb-6">
+        <div className="mx-6">
+            <div className="max-w-4xl mx-auto bg-white border-gray-200 border rounded-lg p-8 shadow-lg h-full min-h-[200px]">
+                <h2 className="text-4xl font-bold text-gray-800 mb-6">
                     Bestellingsoverzicht{" "}
                 </h2>
-                <div className="space-y-4">
+                <div className="space-y-6 text-lg">
                     {overviewData.fileUploads.length > 0 && (
-                        <div className="flex justify-between items-center">
-                            <span className="text-gray-600 font-medium">
+                        <div className="flex flex-col border-b border-gray-200 pb-4">
+                            <span className="text-black font-bold">
                                 Bestelnummer:
                             </span>
-                            <span className="text-gray-900">
+                            <span className="text-gray-700">
                                 {overviewData.fileUploads[0].user_id}
                             </span>
                         </div>
                     )}
                     {latestRecipient && (
                         <>
-                            <div className="flex justify-between items-center">
-                                <span className="text-gray-600 font-medium">
-                                    Leveringsadres:
+                            <div className="flex flex-col border-b border-gray-200 pb-4">
+                                <span className="text-black font-bold">
+                                    Ontvanger Naam:
                                 </span>
-                                <span className="text-gray-900">
-                                    {latestRecipient.recipient_address}
-                                    
+                                <span className="text-gray-700">
+                                    {latestRecipient.recipient_name}
                                 </span>
                             </div>
-                            <div className="flex justify-between items-center">
-                                <span className="text-gray-600 font-medium">
+                            <div className="flex flex-col border-b border-gray-200 pb-4">
+                                <span className="text-black font-bold">
+                                    Leveringsadres:
+                                </span>
+                                <span className="text-gray-700">
+                                    {latestRecipient.recipient_address}
+                                </span>
+                            </div>
+                            <div className="flex flex-col border-b border-gray-200 pb-4">
+                                <span className="text-black font-bold">
                                     Levertijd:
                                 </span>
-                                <span className="text-gray-900">
+                                <span className="text-gray-700">
                                     {latestRecipient.delivery_option ===
                                     "Regulier"
                                         ? "3-5 werkdagen"
@@ -136,11 +146,11 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
                                         : "2-3 werkdagen"}
                                 </span>
                             </div>
-                            <div className="flex justify-between items-center">
-                                <span className="text-gray-600 font-medium">
+                            <div className="flex flex-col">
+                                <span className="text-black font-bold">
                                     Totale Kosten:
                                 </span>
-                                <span className="text-gray-900">
+                                <span className="text-gray-900 font-semibold text-xl">
                                     €
                                     {parseFloat(
                                         latestRecipient.user_price
@@ -151,11 +161,45 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
                     )}
                 </div>
             </div>
-            <div className="flex justify-between mt-4">
+
+            {/* Terms & Conditions */}
+            <div className="mt-10">
+                <p className="mb-5 text-2xl font-semibold">
+                    Wettelijke bepalingen en voorwaarden
+                </p>
+                <div className="flex items-center mb-4">
+                    <Switch
+                        checked={switch1Checked}
+                        onCheckedChange={setSwitch1Checked}
+                    />
+                    <p className="ml-4 text-lg">
+                        Ja, ik aanvaard de Algemene Voorwaarden en Privacybeleid
+                    </p>
+                </div>
+                <div className="flex items-center">
+                    <Switch
+                        checked={switch2Checked}
+                        onCheckedChange={setSwitch2Checked}
+                    />
+                    <p className="ml-4 text-lg">
+                        Ja, ik ben me ervan bewust dat ik er verantwoordelijk
+                        voor ben dat de brief voldoet aan alle wettelijke eisen
+                        voor het beoogde gebruik.
+                    </p>
+                </div>
+            </div>
+
+            {/* Buttons */}
+            <div className="flex justify-between mt-8">
                 <Button variant="back" onClick={onBack} disabled={isPaying}>
                     Terug
                 </Button>
-                <Button variant="next" type="submit" onClick={handlePay} disabled={isPaying}>
+                <Button
+                    variant="next"
+                    type="submit"
+                    onClick={handlePay}
+                    disabled={!switch1Checked || !switch2Checked || isPaying} // Disable unless both switches are checked
+                >
                     Betaal
                 </Button>
             </div>

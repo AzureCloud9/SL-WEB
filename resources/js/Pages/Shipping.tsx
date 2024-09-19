@@ -8,7 +8,6 @@ import OrderSummary from "@/Pages/Sections/BriefSturen/OrderSummary";
 import axios from "axios";
 import { Head } from "@inertiajs/react";
 
-
 export default function Shipping() {
     const [currentStep, setCurrentStep] = useState<number>(1);
     const [bestelnummer, setBestelnummer] = useState<string | null>(null);
@@ -49,32 +48,41 @@ export default function Shipping() {
     return (
         <DefaultLayout>
             <Head title="Brief Sturen" />
-            <SectionLayout backgroundColor="bg-swift_black" fullWidth>
-                <ProgressSteps currentStep={currentStep} />
-            </SectionLayout>
-            <div className="mt-10">
-                {currentStep === 1 && (
-                    <FileUpload
-                        key={componentKey}
-                        onNext={handleFileUploadBestelnummer}
-                    />
-                )}
-                {currentStep === 2 && (
-                    <RecipientInfo
-                        key={componentKey}
-                        onNext={nextStep}
-                        onBack={previousStep}
-                        sessionDetails={sessionDetails}
-                    />
-                )}
-                {currentStep === 3 && (
-                    <OrderSummary
-                        key={componentKey}
-                        onBack={previousStep}
-                        onPay={handlePay}
-                        sessionDetails={sessionDetails}
-                    />
-                )}
+            <div className="lg:hidden">
+                <SectionLayout backgroundColor="bg-swift_black" fullWidth>
+                    <ProgressSteps currentStep={currentStep} />
+                </SectionLayout>
+            </div>
+            <div className="lg:flex justify-center lg:my-16 ">
+                <div className=" bg-swift_black w-[300px] lg:flex  justify-center hidden ">
+                    <ProgressSteps currentStep={currentStep} />
+                </div>
+                <div className="lg:bg-white lg:w-[850px] ">
+                    <div className="mt-10 ">
+                        {currentStep === 1 && (
+                            <FileUpload
+                                key={componentKey}
+                                onNext={handleFileUploadBestelnummer}
+                            />
+                        )}
+                        {currentStep === 2 && (
+                            <RecipientInfo
+                                key={componentKey}
+                                onNext={nextStep}
+                                onBack={previousStep}
+                                sessionDetails={sessionDetails}
+                            />
+                        )}
+                        {currentStep === 3 && (
+                            <OrderSummary
+                                key={componentKey}
+                                onBack={previousStep}
+                                onPay={handlePay}
+                                sessionDetails={sessionDetails}
+                            />
+                        )}
+                    </div>
+                </div>
             </div>
         </DefaultLayout>
     );

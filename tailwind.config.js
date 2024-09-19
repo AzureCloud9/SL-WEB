@@ -53,6 +53,7 @@ module.exports = {
         swift_secondary: "#422D3B",
         swift_secondary_hover: "#241820",
         swift_blue: "#B0D7FF",
+        swift_bg: "#EFF5FF",
       },
       borderRadius: {
         lg: "var(--radius)",

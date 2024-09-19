@@ -128,7 +128,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onNext }) => {
                 File Upload
             </label>
             <div
-                className="border-2 mb-10 border-dashed px-6  border-gray-400 rounded-md w-full h-48 flex items-center justify-center cursor-pointer"
+                className="border-2 mb-10 border-dashed px-6  border-gray-400 rounded-md w-full h-48 lg:w-[500px] flex items-center justify-center cursor-pointer"
                 onClick={handleClick}
             >
                 <div className="flex flex-col items-center">

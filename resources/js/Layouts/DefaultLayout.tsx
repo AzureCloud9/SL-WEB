@@ -7,7 +7,7 @@ interface PropsWithChildrenWithLoading extends PropsWithChildren {
 }
 
 const DefaultLayout = ({ children, maxWidth }: PropsWithChildrenWithLoading) => (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-swift_bg">
         <Navbar />
         <main
             className={`${maxWidth ? "max-w-[1440px] mx-auto px-6" : "w-full"}`}
